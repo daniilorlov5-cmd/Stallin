@@ -1,35 +1,52 @@
 export function Hero() {
   return (
-    <section className="pt-40 pb-24 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
-        <h1 className="text-6xl md:text-8xl lg:text-[130px] font-medium leading-[0.9] tracking-tight text-cw-dark max-w-6xl mb-12">
-          Стальной <br />
-          характер.
-        </h1>
-        <div className="flex flex-col md:flex-row gap-8 md:items-end justify-between mb-16">
-          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl font-medium">
-            Производство премиального профнастила. 
-            Строгое соответствие ГОСТ с максимальным отклонением 0,03 мм.
-          </p>
-          <a
-            href="#products"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-cw-accent rounded-full hover:bg-cw-accent/90 transition-colors shrink-0"
-          >
-            Смотреть продукцию
-          </a>
-        </div>
+    <section className="relative w-full h-screen min-h-[600px] flex items-center justify-start overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 blur-[6px] scale-110"
+      >
+        <source src="/Video1.mp4" type="video/mp4" />
+      </video>
 
-        {/* Video Placeholder */}
-        <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-gray-200 rounded-2xl overflow-hidden relative group cursor-pointer">
-          <img 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" 
-            alt="Производство STALLIN" 
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-            <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center pl-2 shadow-xl">
-              <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-cw-accent border-b-[12px] border-b-transparent"></div>
+      {/* Dark Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
+
+      {/* Content Container */}
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        {/* Dark semi-transparent box behind text */}
+        <div className="bg-black/40 backdrop-blur-md p-8 md:p-12 max-w-[850px] border-l-4 border-cw-accent relative overflow-hidden">
+          {/* Decorative graphic element */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-cw-accent/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+          
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-[1px] w-12 bg-cw-accent"></div>
+            <span className="text-cw-accent font-medium tracking-widest uppercase text-sm">Надежность и качество</span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-6 leading-[1.1] drop-shadow-lg">
+            Производственно-<br />
+            инжиниринговая<br />
+            компания
+          </h1>
+          
+          <p className="text-lg md:text-xl text-white mb-10 font-medium tracking-wide drop-shadow-md max-w-2xl">
+            производственная мощность <span className="text-cw-accent font-bold">60 метров/минуту</span>
+          </p>
+          
+          <div className="flex flex-wrap items-center gap-6">
+            <a
+              href="#products"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-cw-dark bg-white hover:bg-gray-100 transition-colors shrink-0 shadow-lg hover:shadow-xl"
+            >
+              Перейти в каталог
+            </a>
+            <div className="flex items-center gap-3 text-white/80 text-sm font-medium">
+              <svg className="w-5 h-5 text-cw-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              ГОСТ стандарты
             </div>
           </div>
         </div>
